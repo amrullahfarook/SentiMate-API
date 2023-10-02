@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { GoogleOauthGuard } from './google-oauth-guard';
+import { GoogleOAuthGuard } from './google-oauth-guard';
 
 describe('GoogleOauthGuard', () => {
-  let provider: GoogleOauthGuard;
+  let provider: GoogleOAuthGuard;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [GoogleOauthGuard],
+      providers: [GoogleOAuthGuard],
     }).compile();
 
-    provider = module.get<GoogleOauthGuard>(GoogleOauthGuard);
+    provider = module.get<GoogleOAuthGuard>(GoogleOAuthGuard);
   });
 
   it('should be defined', () => {
