@@ -1,17 +1,11 @@
 import { Injectable } from '@nestjs/common';
+import { GoogleAuthResponseDto } from './dtos/response';
+import { GoogleAuthEntity } from './entities';
 
 @Injectable()
 export class AuthService {
-  googleLogin(req) {
-    // todo: throw notFoundException
-    if (!req.user) {
-      return 'No user from google';
-    }
+  async googleLogin(googleAuth: GoogleAuthEntity): Promise<GoogleAuthResponseDto> {
 
-    // todo: create return type for google oauth login
-    return {
-      message: 'User information from google',
-      user: req.user,
-    };
+    return googleAuth as GoogleAuthResponseDto
   }
 }
